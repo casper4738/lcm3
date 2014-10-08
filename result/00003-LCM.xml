@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>LCM | BBS - ISHIHARA</comment>
+<entry key="TIME">00:00:32</entry>
+<entry key="ADDRESS">SD</entry>
+<entry key="JOBS">SD</entry>
+<entry key="AGE">5</entry>
+<entry key="PARAMETER4">Penglihatan Buta Warna Parsial terjadi karena satu dari tiga sel kerucut tidak ada.</entry>
+<entry key="PARAMETER3">32</entry>
+<entry key="PARAMETER2">6</entry>
+<entry key="PARAMETER1">Anda terindikasi mengalami penglihatan Buta Warna Parsial</entry>
+<entry key="ID">00003</entry>
+<entry key="NUMBER_TEST">3</entry>
+<entry key="NAME">SD</entry>
+<entry key="METHOD">LCM</entry>
+</properties>

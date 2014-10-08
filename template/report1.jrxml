@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced14e9a-922f-48be-a7ca-975fc289b867">
+	<property name="ireport.zoom" value="1.2418426461183103"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="336"/>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<parameter name="parameter2" class="java.lang.String"/>
+	<parameter name="parameter3" class="java.lang.String"/>
+	<parameter name="parameter4" class="java.lang.String"/>
+	<parameter name="parameter5" class="java.lang.String"/>
+	<parameter name="parameter6" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="numberTest" class="java.lang.Integer">
+		<fieldDescription><![CDATA[numberTest]]></fieldDescription>
+	</field>
+	<field name="jobs" class="java.lang.String">
+		<fieldDescription><![CDATA[jobs]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[address]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.String">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="age" class="java.lang.Integer">
+		<fieldDescription><![CDATA[age]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="e7aadbe6-4fed-4144-b1e0-5c2fa1ba76d6" x="14" y="11" width="485" height="25"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SURAT KETERANGAN HASIL PEMERIKSAAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e7aadbe6-4fed-4144-b1e0-5c2fa1ba76d6" x="14" y="36" width="485" height="25"/>
+				<box>
+					<bottomPen lineWidth="2.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEST BUTA WARNA]]></text>
+			</staticText>
+			<image scaleImage="FillFrame">
+				<reportElement uuid="8794def7-8dc7-4d47-9ddf-036fd6ee967c" x="499" y="11" width="56" height="50"/>
+				<box>
+					<bottomPen lineWidth="2.0"/>
+				</box>
+				<imageExpression><![CDATA["01.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="721">
+			<textField>
+				<reportElement uuid="28043af0-af36-416a-bee3-ee643a07f825" x="100" y="72" width="442" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" : "+$F{jobs}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="137" y="200" width="371" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" : "+$P{parameter3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="28043af0-af36-416a-bee3-ee643a07f825" x="100" y="92" width="442" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" : "+$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="100" y="12" width="442" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" : "+$F{id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="180" width="137" height="20"/>
+				<textElement/>
+				<text><![CDATA[Jumlah jawaban yang benar :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c11dc96d-90b9-4d3f-93b6-548c3731ccb3" x="0" y="136" width="542" height="45"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Hasil Tes  : "+$P{parameter1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="137" y="180" width="371" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" : "+$P{parameter2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="28043af0-af36-416a-bee3-ee643a07f825" x="100" y="52" width="442" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" : "+$F{age}+" TAHUN"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="100" y="32" width="442" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" : "+$F{name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="dd1e9a9f-c433-4412-8549-aa7112c94ebb" x="0" y="52" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Umur ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dd1e9a9f-c433-4412-8549-aa7112c94ebb" x="0" y="72" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Pekerjaan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="12" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="200" width="137" height="20"/>
+				<textElement/>
+				<text><![CDATA[Jumlah jawaban yang salah :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="32" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="dd1e9a9f-c433-4412-8549-aa7112c94ebb" x="0" y="92" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ed73d6e-39ca-4b5b-b936-2ee49d9e4556" x="39" y="347" width="225" height="20"/>
+				<textElement/>
+				<text><![CDATA[Cara mengatasi atau menyembuhkan :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ed73d6e-39ca-4b5b-b936-2ee49d9e4556" x="39" y="367" width="211" height="20"/>
+				<textElement/>
+				<text><![CDATA[Menggunakan kacamata buta warna]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ed73d6e-39ca-4b5b-b936-2ee49d9e4556" x="39" y="387" width="211" height="20"/>
+				<textElement/>
+				<text><![CDATA[Menggunakan lensa kontak buta warna]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ed73d6e-39ca-4b5b-b936-2ee49d9e4556" x="39" y="407" width="211" height="20"/>
+				<textElement/>
+				<text><![CDATA[Pengobatan alternative / terapi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7ed73d6e-39ca-4b5b-b936-2ee49d9e4556" x="39" y="427" width="457" height="33"/>
+				<textElement/>
+				<text><![CDATA[Mengkonsumsi bahan-bahan alami seperti : susu kambing, bawang merah, buah papaya, buah apel, belimbing, susu sapi, buah naga, daun sirih]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="562a21c8-2ccd-410d-8aa0-57ca0c5fb556" x="25" y="347" width="14" height="20"/>
+				<textElement/>
+				<text><![CDATA[1.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="562a21c8-2ccd-410d-8aa0-57ca0c5fb556" x="25" y="367" width="14" height="20"/>
+				<textElement/>
+				<text><![CDATA[2.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="562a21c8-2ccd-410d-8aa0-57ca0c5fb556" x="25" y="387" width="14" height="20"/>
+				<textElement/>
+				<text><![CDATA[3.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="562a21c8-2ccd-410d-8aa0-57ca0c5fb556" x="25" y="407" width="14" height="20"/>
+				<textElement/>
+				<text><![CDATA[4.]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="0" y="265" width="542" height="73"/>
+				<textElement/>
+				<textFieldExpression><![CDATA["Keterangan : "+$P{parameter4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="137" y="240" width="371" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" : "+$P{parameter6}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="240" width="137" height="20"/>
+				<textElement/>
+				<text><![CDATA[Lama waktu  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="83ee5b3c-201b-460f-80ca-645cd9838a0e" x="0" y="220" width="137" height="20"/>
+				<textElement/>
+				<text><![CDATA[Metode pengacakan  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="250cc669-3dfd-4d93-855d-267de9843113" x="137" y="220" width="371" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" : "+$P{parameter5}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+</jasperReport>
