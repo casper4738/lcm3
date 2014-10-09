@@ -63,11 +63,13 @@ public class PanelTestResult extends javax.swing.JPanel {
 
     private String method;
     private String time;
+    private String fast;
 
-    public void set(List<Plate> lists, String method, String time) {
+    public void set(List<Plate> lists, String method, String time, String fast) {
         try {
             this.method = method;
             this.time = time;
+            this.fast = fast;
             ishihara.reset();
             Object[] answer = new Object[38];
             for (Plate plate : lists) {
@@ -144,6 +146,7 @@ public class PanelTestResult extends javax.swing.JPanel {
             properties.setProperty("PARAMETER4", ket);
             properties.setProperty("METHOD", method);
             properties.setProperty("TIME", time);
+            properties.setProperty("FAST", fast);
             properties.storeToXML(new FileOutputStream(new File("./result/" + FrameMain.USER.getId() + "-" + method + ".xml")), "LCM | BBS - ISHIHARA");
 
         } catch (Exception ex) {

@@ -55,7 +55,7 @@ public class FrameMain extends javax.swing.JFrame {
         jPanel1.add(jpanelTest, "card2");
         jPanel1.add(panelDataUser, "card3");
 
-//        setResizable(false);
+        setResizable(false);
         buttonTestResult.setEnabled(false);
         buttonIshiharaTest.setEnabled(false);
         
@@ -235,11 +235,14 @@ public class FrameMain extends javax.swing.JFrame {
         String time1 = panelTest.getPanelIshiharaTest1().getLabelTime().getText();
         String time2 = panelTest.getPanelIshiharaTest2().getLabelTime().getText();
         
+        String fast1 = panelTest.getPanelIshiharaTest1().getTimeDuration()+"";
+        String fast2 = panelTest.getPanelIshiharaTest2().getTimeDuration()+"";
+        
         
         if(bool1 && bool2) {
             showCard("card3");
-            panelResult.getPanelTestResult1().set(getListPlates1(), "LCM", time1);
-            panelResult.getPanelTestResult2().set(getListPlates2(), "BBS", time2);
+            panelResult.getPanelTestResult1().set(getListPlates1(), "LCM", time1, fast1);
+            panelResult.getPanelTestResult2().set(getListPlates2(), "BBS", time2, fast2);
             buttonTestResult.setEnabled(true);
         } else {
             JOptionPane.showMessageDialog(this, "Silakan selesaikan soal tes terlebih dahulu ~ ", 

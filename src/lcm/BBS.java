@@ -1,9 +1,8 @@
 package lcm;
- 
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 /*
  * Netbeans 8.0 
@@ -18,11 +17,14 @@ public class BBS {
     public static void main(String[] args) throws InterruptedException {
 
         BBS bbs = new BBS();
-        bbs.setP(BigInteger.valueOf(43));
-        bbs.setQ(BigInteger.valueOf(99));
+        bbs.setP(BigInteger.valueOf(72));
+        bbs.setQ(BigInteger.valueOf(11));
         bbs.run();
         int[] listRandom = bbs.getListRandom();
         for (int i : listRandom) {
+            if (i > listRandom.length) {
+                System.out.print("xX:");
+            }
             System.out.println(i);
         }
 
@@ -32,25 +34,23 @@ public class BBS {
     private int[] listRandom;
     private BigInteger p;
     private BigInteger q;
-    private long timeDuration;
 
     public BBS() {
         this.listRandom = new int[38];
     }
 
     public void run() {
-        long long1 = System.nanoTime();
         boolean bool = true;
         BigInteger new_p = p;
         BigInteger new_q = q;
         while (new_p.compareTo(BigInteger.valueOf(100)) <= 0) {
             new_q = q;
             while (new_q.compareTo(BigInteger.valueOf(100)) <= 0 && bool) {
-                for (int k = 5; k < 100; k++) {
+                for (int k = 8; k < 100; k++) {
                     BigInteger s = BigInteger.valueOf(k);
                     if (generatorBBS(s, new_p, new_q)) {
                         int[] cek = getListRandom();
-                        while (!sisip(cek)) {
+                        while (!cek(cek)) {
                         }
                         p = new_p;
                         q = new_q;
@@ -62,12 +62,9 @@ public class BBS {
             }
             new_p = new_p.add(BigInteger.ONE);
         }
-        long long2 = System.nanoTime();
-        timeDuration = TimeUnit.MILLISECONDS.convert(long2 - long1, TimeUnit.NANOSECONDS);
-//        System.out.println("value : " + timeDuration);
     }
 
-    private boolean sisip(int[] cek) {
+    private boolean cek(int[] cek) {
         boolean[] bool = new boolean[cek.length];
         for (int i = 0; i < cek.length; i++) {
             bool[i] = false;
@@ -82,23 +79,19 @@ public class BBS {
         }
 
         for (int i = 0; i < cek.length; i++) {
-            for (int j = i + 1; j < cek.length; j++) {
-                if (cek[i] == cek[j]) {
-                    for (int n = 0; n < cek.length; n++) {
-                        if (!bool[n]) {
-                            cek[j] = n;
-                            bool[n] = true;
-                            break;
+            if (cek[i] > cek.length) {
+                cek[i] = cek[i] % 38;
+            } else {
+                for (int j = i + 1; j < cek.length; j++) {
+                    if (cek[i] == cek[j]) {
+                        for (int n = 0; n < cek.length; n++) {
+                            if (!bool[n]) {
+                                cek[j] = n;
+                                bool[n] = true;
+                                break;
+                            }
                         }
                     }
-                }
-            }
-        }
-
-        for (int i = 0; i < cek.length; i++) {
-            for (int j = i + 1; j < cek.length; j++) {
-                if (cek[i] == cek[j]) {
-                    break;
                 }
             }
         }
@@ -110,6 +103,7 @@ public class BBS {
                 }
             }
         }
+
         return true;
     }
 
@@ -118,6 +112,27 @@ public class BBS {
     }
 
     public boolean isBilanganPrima(BigInteger p, BigInteger q) {
+        boolean prima1 = true;
+        boolean prima2 = true;
+
+        for (int j = 2; j < p.intValue(); j++) {
+            if (p.intValue() % j == 0) {
+                prima1 = false;
+                break;
+            }
+        }
+
+        for (int j = 2; j < q.intValue(); j++) {
+            if (q.intValue() % j == 0) {
+                prima2 = false;
+                break;
+            }
+        }
+
+        return prima1 && prima2;
+    }
+
+    public boolean isCongruent(BigInteger p, BigInteger q) {
         if (p.mod(BigInteger.valueOf(4)).compareTo(BigInteger.valueOf(3)) != 0) {
             return false;
         }
@@ -156,27 +171,23 @@ public class BBS {
 
     private boolean generatorBBS(BigInteger s, BigInteger p, BigInteger q) {
         if (!isBilanganPrima(p, q)) {
-//            System.out.println("tidak penuhi syarat bilangan 3 mod 4");
+            return false;
+        } else if (!isCongruent(p, q)) {
             return false;
         } else if (!isSeed(s, p, q)) {
-//            System.out.println("tidak penuhi syarat 2 <= s < n ");
             return false;
         } else if (!isGreatestCommonDivisor(s, p, q)) {
-//            System.out.println("tidak penuhi syarat relatif bilangan prima GCD = 1");
             return false;
         } else {
-//            System.out.println("memenuhi syarat");
             BigInteger n = getBilanganBlum(p, q);
             BigInteger x = (s.multiply(s)).mod(n);
             int ite = 0;
             int maxIte = 0;
-            while (maxIte <= 50) {
+            while (maxIte < 38) {
                 x = (x.multiply(x)).mod(n);
                 BigInteger value = getLSBInDec(x);
-                if (ite < listRandom.length && value.intValue() <= listRandom.length) {
-                    listRandom[ite] = value.intValue();
-                    ite++;
-                }
+                listRandom[ite] = value.intValue();
+                ite++;
                 maxIte++;
             }
             return true;
@@ -208,6 +219,7 @@ public class BBS {
 
         List<BigInteger> list = new ArrayList<>();
         for (int i = vlist.size() - 1; i >= 0; i--) {
+
             list.add(vlist.get(i));
         }
 
@@ -240,10 +252,6 @@ public class BBS {
 
     public BigInteger getQ() {
         return q;
-    }
-
-    public long getTimeDuration() {
-        return timeDuration;
     }
 
 }

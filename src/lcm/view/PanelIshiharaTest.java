@@ -358,6 +358,7 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
 
     private void nextQuestion() {
         if (number == 38) {
+            finish = true;
             showCard("answer-result");
             stopTimer();
         } else {
@@ -387,21 +388,24 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
         return timeDuration;
     }
 
+    private int number_lcm = 1;
+
     public void reset(String method) {
-        finish = false;
         long long1 = System.nanoTime();
+        finish = false;
         number = 0;
         listPlates = new ArrayList<>();
 
         Properties properties = new Properties();
         File file = new File("config.xml");
         try {
-            int number_lcm = 1;
             int number_test_p = 1;
             int number_test_q = 1;
             if (file.exists()) {
                 properties.loadFromXML(new FileInputStream(file));
-                number_lcm = new Integer(properties.getProperty("NUMBER_TEST_LCM", "1"));
+                if (number_lcm == 1) {
+                    number_lcm = new Integer(properties.getProperty("ID", "1"));
+                }
                 number_test_p = new Integer(properties.getProperty("NUMBER_TEST_P", "5"));
                 number_test_q = new Integer(properties.getProperty("NUMBER_TEST_Q", "5"));
             }
@@ -433,9 +437,7 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
                     plate.setResult(0);
                     listPlates.add(plate);
                 }
-
-                int number_lcm = new Integer(properties.getProperty("NUMBER_TEST_LCM", "1"));
-                properties.setProperty("NUMBER_TEST_LCM", format.format(number_lcm + 1));
+                number_lcm++;
                 break;
             }
             case "method2": {
@@ -474,6 +476,8 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
             properties.storeToXML(new FileOutputStream(file), "APLIKASI TES BUTA WARNA MENGGUNAKAN LCM");
         } catch (Exception e) {
         }
+        long long2 = System.nanoTime();
+        timeDuration = TimeUnit.MILLISECONDS.convert(long2 - long1, TimeUnit.NANOSECONDS);
 
 //        for (int i = 0; i < 38; i++) {
 //            Plate plate = new Plate();
@@ -492,8 +496,6 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
         answerRight = new StringBuilder();
         labelAnswerLeft.setText(answerLeft.toString());
         labelAnswerRight.setText(answerRight.toString());
-        long long2 = System.nanoTime();
-        timeDuration = TimeUnit.MILLISECONDS.convert(long2 - long1, TimeUnit.NANOSECONDS);
     }
 
     private void showCard(String card) {
@@ -507,7 +509,7 @@ public class PanelIshiharaTest extends javax.swing.JPanel {
     public JLabel getLabelTime() {
         return labelTime;
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonLines0;
     private javax.swing.JButton buttonLines1;

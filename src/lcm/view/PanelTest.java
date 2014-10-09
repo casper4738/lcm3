@@ -21,10 +21,11 @@ public class PanelTest extends javax.swing.JPanel {
     }
 
     public void start() {
-        panelIshiharaTest1.reset("method1");
-        panelIshiharaTest1.startTimer();
         panelIshiharaTest2.reset("method2");
+        panelIshiharaTest1.reset("method1");
+        
         panelIshiharaTest2.startTimer();
+        panelIshiharaTest1.startTimer();
 
         jLabel2.setText("KECEPATAN PENGACAKAN : " + panelIshiharaTest1.getTimeDuration() + " MS");
         jLabel3.setText("KECEPATAN PENGACAKAN : " + panelIshiharaTest2.getTimeDuration() + " MS");

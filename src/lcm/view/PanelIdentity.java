@@ -64,7 +64,6 @@ public class PanelIdentity extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
         iPanelGlass1 = new lcm.component.IPanelGlass();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -78,8 +77,6 @@ public class PanelIdentity extends javax.swing.JPanel {
         textJobs = new lcm.component.ITextField();
         textID = new lcm.component.ITextField();
         iPanelGlass4 = new lcm.component.IPanelGlass();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
         iPa19 = new lcm.component.IPa();
         iPa20 = new lcm.component.IPa();
         iPa21 = new lcm.component.IPa();
@@ -107,7 +104,6 @@ public class PanelIdentity extends javax.swing.JPanel {
         iPanelGlass2 = new lcm.component.IPanelGlass();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(547, 436));
 
@@ -168,36 +164,15 @@ public class PanelIdentity extends javax.swing.JPanel {
 
         iPanelGlass4.setBackgroundImage(new javax.swing.ImageIcon(getClass().getResource("/lcm/resources/eye_1572775c.jpg"))); // NOI18N
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jRadioButton1.setSelected(true);
-        jRadioButton1.setText("Linear Congruent Method");
-        jRadioButton1.setOpaque(false);
-
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jRadioButton2.setText("Blum - Blum Shub");
-        jRadioButton2.setOpaque(false);
-
         javax.swing.GroupLayout iPanelGlass4Layout = new javax.swing.GroupLayout(iPanelGlass4);
         iPanelGlass4.setLayout(iPanelGlass4Layout);
         iPanelGlass4Layout.setHorizontalGroup(
             iPanelGlass4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(iPanelGlass4Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addGroup(iPanelGlass4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton1))
-                .addContainerGap(253, Short.MAX_VALUE))
+            .addGap(0, 510, Short.MAX_VALUE)
         );
         iPanelGlass4Layout.setVerticalGroup(
             iPanelGlass4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(iPanelGlass4Layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(jRadioButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jRadioButton2)
-                .addContainerGap(129, Short.MAX_VALUE))
+            .addGap(0, 250, Short.MAX_VALUE)
         );
 
         iPanelGlass1.add(iPanelGlass4);
@@ -391,14 +366,6 @@ public class PanelIdentity extends javax.swing.JPanel {
         });
         iPanelGlass2.add(jButton2);
 
-        jButton3.setText("jButton3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        iPanelGlass2.add(jButton3);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -443,11 +410,6 @@ public class PanelIdentity extends javax.swing.JPanel {
         FrameMain.USER.setAddress(textAddress.getText());
         FrameMain.USER.setJobs(textJobs.getText());
         FrameMain.USER.setNumberTest(new Integer(textID.getText()) % 32);
-        if (jRadioButton1.isSelected()) {
-            FrameMain.USER.setMethod("method1");
-        } else {
-            FrameMain.USER.setMethod("method2");
-        }
         frameMain.showPanelTest();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -455,13 +417,8 @@ public class PanelIdentity extends javax.swing.JPanel {
         frameMain.showPanelUser();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        System.out.println(getSize());
-    }//GEN-LAST:event_jButton3ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
     private lcm.component.IPa iPa1;
     private lcm.component.IPa iPa10;
     private lcm.component.IPa iPa11;
@@ -491,14 +448,11 @@ public class PanelIdentity extends javax.swing.JPanel {
     private lcm.component.IPanelGlass iPanelGlass4;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea textAddress;
     private javax.swing.JSpinner textAge;

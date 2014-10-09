@@ -21,6 +21,7 @@ public class LCM {
         main.setA(1);
         main.setC(7);
         main.setM(38);
+        main.setZ0(8);
         main.run();
     }
 
@@ -29,22 +30,17 @@ public class LCM {
     private int a;
     private int z0;
     private final int[] listRandom;
-    private long timeDuration;
 
     public LCM() {
         this.listRandom = new int[38];
     }
 
     public void run() {
-        long long1 = System.nanoTime();
         int z = z0;
         for (int i = 0; i < 38; i++) {
-            listRandom[i] = z;
             z = getLinearCongruen(z);
+            listRandom[i] = z;
         }
-        long long2 = System.nanoTime();
-        timeDuration = TimeUnit.MILLISECONDS.convert(long2 - long1, TimeUnit.NANOSECONDS);
-//        System.out.println("value : " + timeDuration);
     }
 
     public int getLinearCongruen(int z) {
@@ -69,10 +65,6 @@ public class LCM {
 
     public int[] getListRandom() {
         return listRandom;
-    }
-
-    public long getTimeDuration() {
-        return timeDuration;
     }
 
 }
