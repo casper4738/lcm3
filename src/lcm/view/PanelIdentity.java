@@ -168,7 +168,7 @@ public class PanelIdentity extends javax.swing.JPanel {
         iPanelGlass4.setLayout(iPanelGlass4Layout);
         iPanelGlass4Layout.setHorizontalGroup(
             iPanelGlass4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 510, Short.MAX_VALUE)
+            .addGap(0, 520, Short.MAX_VALUE)
         );
         iPanelGlass4Layout.setVerticalGroup(
             iPanelGlass4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,7 +176,7 @@ public class PanelIdentity extends javax.swing.JPanel {
         );
 
         iPanelGlass1.add(iPanelGlass4);
-        iPanelGlass4.setBounds(10, 190, 510, 250);
+        iPanelGlass4.setBounds(10, 190, 520, 250);
 
         iPa19.setRound(false);
         iPa19.setLayout(new java.awt.BorderLayout());
@@ -332,7 +332,7 @@ public class PanelIdentity extends javax.swing.JPanel {
         iPanelGlass3.setLayout(iPanelGlass3Layout);
         iPanelGlass3Layout.setHorizontalGroup(
             iPanelGlass3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 510, Short.MAX_VALUE)
+            .addGap(0, 520, Short.MAX_VALUE)
         );
         iPanelGlass3Layout.setVerticalGroup(
             iPanelGlass3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -340,7 +340,7 @@ public class PanelIdentity extends javax.swing.JPanel {
         );
 
         iPanelGlass1.add(iPanelGlass3);
-        iPanelGlass3.setBounds(10, 10, 510, 260);
+        iPanelGlass3.setBounds(10, 10, 520, 260);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lcm/resources/Startup-Refresh.PNG"))); // NOI18N
         jButton1.setText("Simpan Dan Lanjutkan");
@@ -373,7 +373,7 @@ public class PanelIdentity extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(iPanelGlass2, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
+                    .addComponent(iPanelGlass2, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)
                     .addComponent(iPanelGlass1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -381,7 +381,7 @@ public class PanelIdentity extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(iPanelGlass1, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+                .addComponent(iPanelGlass1, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(iPanelGlass2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())

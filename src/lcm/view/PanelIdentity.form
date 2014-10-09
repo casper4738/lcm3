@@ -24,7 +24,7 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="iPanelGlass2" pref="527" max="32767" attributes="0"/>
+                  <Component id="iPanelGlass2" pref="537" max="32767" attributes="0"/>
                   <Component id="iPanelGlass1" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -35,7 +35,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="iPanelGlass1" pref="339" max="32767" attributes="0"/>
+              <Component id="iPanelGlass1" pref="352" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="iPanelGlass2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -201,14 +201,14 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="190" width="510" height="250"/>
+              <AbsoluteConstraints x="10" y="190" width="520" height="250"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="510" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="520" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -571,14 +571,14 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="10" y="10" width="510" height="260"/>
+              <AbsoluteConstraints x="10" y="10" width="520" height="260"/>
             </Constraint>
           </Constraints>
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="510" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="520" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
